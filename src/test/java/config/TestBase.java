@@ -11,11 +11,10 @@ public class TestBase {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
-
     @BeforeEach
     public void createDriver() {
-        //System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+//        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
 
         driver.manage().window().maximize();
