@@ -1,11 +1,13 @@
 package pages;
 
+import config.TestBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
+    private WebDriver driver;
 
     @FindBy(id = "username")
     private WebElement usernameField;
@@ -19,7 +21,8 @@ public class LoginPage {
     @FindBy(id = "flash")
     private WebElement message;
 
-    public LoginPage(WebDriver driver) {
+    public LoginPage() {
+        driver = TestBase.getDriver();
         PageFactory.initElements(driver, this);
     }
 
@@ -37,5 +40,9 @@ public class LoginPage {
 
     public WebElement getMessage() {
         return message;
+    }
+
+    public WebDriver getDriver() {
+        return driver;
     }
 }
