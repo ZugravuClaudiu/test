@@ -20,16 +20,16 @@ public class TestBase {
         wait = new WebDriverWait(driver, 10L);
     }
 
-    public static void destroyDriver() {
-        if (driver != null) {
-            driver.quit();
-        } else {
-            System.out.println("Driver is null!");
-        }
-
-        driver = null;
-        wait = null;
-    }
+//    public static void destroyDriver() {
+//        if (driver != null) {
+//            driver.quit();
+//        } else {
+//            System.out.println("Driver is null!");
+//        }
+//
+//        driver = null;
+//        wait = null;
+//    }
 
     public static WebDriver getDriver() {
         return driver;

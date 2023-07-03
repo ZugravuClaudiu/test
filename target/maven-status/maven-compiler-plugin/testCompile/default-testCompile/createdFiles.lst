@@ -1,0 +1,10 @@
+config\TestBase.class
+stepDefinitions\AddRemoveElementsStepDefinitions.class
+pages\LoginPage.class
+pages\DynamicControlsPage.class
+stepDefinitions\CheckBoxesStepDefinitions.class
+stepDefinitions\DynamicControlsStepDefinitions.class
+stepDefinitions\LoginStepDefinitions.class
+pages\AddRemoveElements.class
+pages\CheckBoxesPage.class
+config\Hooks.class
