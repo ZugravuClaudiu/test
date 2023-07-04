@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 public class ForgotPasswordPage {
-    private WebDriver driver;
+
     @FindBy(xpath = "//*[@id=\"email\"]")
     private WebElement email;
     @FindBy(xpath ="/html/body/h1")
@@ -13,10 +13,10 @@ public class ForgotPasswordPage {
 
     @FindBy(xpath = "//*[@id=\"form_submit\"]/i")
     private WebElement button;
-///html/body/h1
-    public  ForgotPasswordPage()
+
+    public  ForgotPasswordPage(WebDriver driver)
     {
-        driver=TestBase.getDriver();
+
         PageFactory.initElements(driver, this);}
 
     public WebElement getEmail()
@@ -32,8 +32,6 @@ public class ForgotPasswordPage {
         return button;
     }
 
-        public WebDriver getDriver() {
-        return driver;
-    }
+
 }
 

@@ -7,14 +7,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class CheckBoxesPage {
-    private WebDriver driver;
+
     @FindBy(xpath = "/html/body/div[2]/div/div/form/input[1]")
     private WebElement checkbox1;
     @FindBy(xpath = "/html/body/div[2]/div/div/form/input[2]")
     private WebElement checkbox2;
 
-    public CheckBoxesPage() {
-        driver = TestBase.getDriver();
+    public CheckBoxesPage(WebDriver driver) {
+      //  driver = TestBase.getDriver();
         PageFactory.initElements(driver, this);
     }
 
@@ -26,9 +26,7 @@ public class CheckBoxesPage {
         return checkbox2;
     }
 
-    public WebDriver getDriver() {
-        return driver;
-    }
+
 }
 
 

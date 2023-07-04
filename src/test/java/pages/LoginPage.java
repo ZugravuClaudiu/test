@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
-    private WebDriver driver;
 
     @FindBy(id = "username")
     private WebElement usernameField;
@@ -21,8 +20,7 @@ public class LoginPage {
     @FindBy(id = "flash")
     private WebElement message;
 
-    public LoginPage() {
-        driver = TestBase.getDriver();
+    public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
@@ -42,7 +40,5 @@ public class LoginPage {
         return message;
     }
 
-    public WebDriver getDriver() {
-        return driver;
-    }
+
 }

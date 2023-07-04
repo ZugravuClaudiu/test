@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import config.TestBase;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,14 +13,14 @@ import java.util.List;
 
 public class AddRemoveElementsStepDefinitions {
 
-    private AddRemoveElements elementsPage = new AddRemoveElements();
+    private AddRemoveElements elementsPage = new AddRemoveElements(TestBase.getDriver());
     By elementlocator=By.name("Delete");
-    List<WebElement> elements=elementsPage.getDriver().findElements(elementlocator);
+    List<WebElement> elements=TestBase.getDriver().findElements(elementlocator);
 
     @Given ("The user enters the application")
     public void userOpensApp()
     {
-        elementsPage.getDriver().navigate().to("https://the-internet.herokuapp.com/add_remove_elements/");
+        TestBase.getDriver().navigate().to("https://the-internet.herokuapp.com/add_remove_elements/");
     }
     @When("the user clicks on the Add button")
     public void clickOnAddButton()
@@ -46,7 +47,7 @@ public class AddRemoveElementsStepDefinitions {
     @And("the user removes multiple buttons")
     public void deleteMultipleButtons()
     {
-        while (!elementsPage.getDriver().findElements(By.xpath("//*[@id='elements']/button[1]")).isEmpty())
+        while (!TestBase.getDriver().findElements(By.xpath("//*[@id='elements']/button[1]")).isEmpty())
         {
             elementsPage.getRemovebutton().click();
         }

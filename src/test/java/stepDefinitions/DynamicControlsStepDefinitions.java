@@ -10,11 +10,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.DynamicControlsPage;
 
 public class DynamicControlsStepDefinitions {
-    private DynamicControlsPage dynamicControlsPage = new DynamicControlsPage();
+    private DynamicControlsPage dynamicControlsPage = new DynamicControlsPage(TestBase.getDriver());
 
     @Given("the user opens the Dynamic Controls application")
     public void userOpensTheApplication() {
-        dynamicControlsPage.getDriver().navigate().to("https://the-internet.herokuapp.com/dynamic_controls");
+        TestBase.getDriver().navigate().to("https://the-internet.herokuapp.com/dynamic_controls");
     }
 
     @When("the user clicks on the Enable button")

@@ -9,11 +9,11 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.CheckBoxesPage;
 public class CheckBoxesStepDefinitions {
-    private CheckBoxesPage checkBoxes =new CheckBoxesPage();
+    private CheckBoxesPage checkBoxes =new CheckBoxesPage(TestBase.getDriver());
     @Given ("the user opens the checkboxes application")
     public void openCheckboxesApp()
             {
-            checkBoxes.getDriver().navigate().to("https://the-internet.herokuapp.com/checkboxes");
+            TestBase.getDriver().navigate().to("https://the-internet.herokuapp.com/checkboxes");
             }
     @When("the user clicks the checkboxes")
     public void clickOnCheckboxes()

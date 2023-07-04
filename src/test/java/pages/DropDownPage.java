@@ -6,18 +6,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 public class DropDownPage {
-    private WebDriver driver;
+
     @FindBy(xpath = "//*[@id=\"dropdown\"]")
     private WebElement dropdown;
-    public DropDownPage()
+    public DropDownPage(WebDriver driver)
     {
-        driver = TestBase.getDriver();
+        //driver = TestBase.getDriver();
         PageFactory.initElements(driver, this);
     }
     public WebElement getDropdown() {
         return dropdown;
     }
-    public WebDriver getDriver() {
-        return driver;
-    }
+
 }

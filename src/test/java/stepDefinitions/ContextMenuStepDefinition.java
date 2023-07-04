@@ -12,12 +12,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.ContextMenuPage;
 
 public class ContextMenuStepDefinition {
-    private ContextMenuPage contextMenuPage = new ContextMenuPage();
-    Actions action = new Actions(contextMenuPage.getDriver());
+    private ContextMenuPage contextMenuPage = new ContextMenuPage(TestBase.getDriver());
+    Actions action = new Actions(TestBase.getDriver());
 
     @Given("The user opens the Context Menu Page application")
     public void openContextMenuPage() {
-        contextMenuPage.getDriver().navigate().to("https://the-internet.herokuapp.com/context_menu");
+        TestBase.getDriver().navigate().to("https://the-internet.herokuapp.com/context_menu");
     }
 
     @When("The user right clicks on the hotspot")
@@ -27,15 +27,15 @@ public class ContextMenuStepDefinition {
 
     @Then("The JavaScript alert You selected a context menu is displayed ")
     public void jsAlertDisplay() {
-        Alert alert = contextMenuPage.getDriver().switchTo().alert();
-        String message = contextMenuPage.getDriver().switchTo().alert().getText();
+        Alert alert = TestBase.getDriver().switchTo().alert();
+        String message = TestBase.getDriver().switchTo().alert().getText();
         Assertions.assertEquals("You selected a context menu", message);
     }
 
     @Then("the JavaScript alert You selected a context menu is displayed")
     public void the_java_script_alert_you_selected_a_context_menu_is_displayed() {
-        Alert alert = contextMenuPage.getDriver().switchTo().alert();
-        String message = contextMenuPage.getDriver().switchTo().alert().getText();
+        Alert alert = TestBase.getDriver().switchTo().alert();
+        String message = TestBase.getDriver().switchTo().alert().getText();
         Assertions.assertEquals("You selected a context menu", message);
     }
 

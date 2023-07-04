@@ -10,8 +10,8 @@ public class Hooks {
         TestBase.createDriver();
     }
 
-//    @After
-//    public void tearDown() {
-//        TestBase.destroyDriver();
-//    }
+    @After
+    public void tearDown() {
+        TestBase.destroyDriver();
+    }
 }

@@ -7,15 +7,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class DynamicControlsPage {
-    private WebDriver driver;
+
     @FindBy(css = "button[onclick='swapInput()']")
     private WebElement enableButton;
 
     @FindBy(xpath = "//input[@type='text']")
     private WebElement inputField;
 
-    public DynamicControlsPage() {
-        driver = TestBase.getDriver();
+    public DynamicControlsPage(WebDriver driver) {
+       // driver = TestBase.getDriver();
         PageFactory.initElements(driver, this);
     }
 
@@ -27,7 +27,5 @@ public class DynamicControlsPage {
         return inputField;
     }
 
-    public WebDriver getDriver() {
-        return driver;
-    }
+
 }

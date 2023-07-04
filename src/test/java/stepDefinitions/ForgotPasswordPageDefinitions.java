@@ -1,4 +1,5 @@
 package stepDefinitions;
+import config.TestBase;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -8,11 +9,11 @@ import org.openqa.selenium.By;
 import pages.ForgotPasswordPage;
 public class ForgotPasswordPageDefinitions {
 
-    private ForgotPasswordPage forgotPasswordPage=new ForgotPasswordPage();
+    private ForgotPasswordPage forgotPasswordPage=new ForgotPasswordPage(TestBase.getDriver());
     @Given("The user navigates to ForgotPassword app")
     public void userOpensApplication()
     {
-        forgotPasswordPage.getDriver().navigate().to("https://the-internet.herokuapp.com/forgot_password");
+        TestBase.getDriver().navigate().to("https://the-internet.herokuapp.com/forgot_password");
     }
 //    @When("The user enters a random password")
 //    public void enterPass(String string)
